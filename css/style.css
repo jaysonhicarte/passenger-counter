@@ -1,0 +1,180 @@
+/* ====================================== Initial CSS ====================================== */
+/****** Tokens ******/
+:root {
+	/* Brand & Theme Colors */
+	--primary-clr: #232946;
+	--secondary-clr: #3c4261;
+	--accent-clr-1: #9da4c4;
+	--accent-clr-2: #c4bf9d;
+
+	/* Neutrals & Surfaces */
+	--neutral-clr: #fff;
+	/* Utility / Action Colors */
+	--success-clr: #1a7a21;
+	--dark-clr: #282c30;
+
+	/* Layout */
+	--site-max-width: 1400px;
+
+	/* Typography */
+	--font-main:
+		"Space Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+		"Courier New", monospace;
+}
+
+/****** Spacing ******/
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/****** Defaults ******/
+html {
+	scroll-behavior: smooth;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	min-height: 100vh;
+	font-family: var(--font-main);
+	background-color: var(--primary-clr); /* Set default dark background */
+	color: var(--neutral-clr);
+	line-height: 1.5;
+
+	display: grid;
+	place-items: center;
+}
+
+/****** Typography ******/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.1;
+	color: #ffffff; /* Ensures headings pop against dark background */
+	text-wrap: balance; /* Keeps multi-line headings visually even */
+}
+
+p {
+	text-wrap: pretty; /* Prevents single orphan words at line ends */
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+/****** Media Resets ******/
+img,
+picture,
+svg,
+video,
+canvas {
+	display: block;
+	max-width: 100%;
+}
+/****** Form Controls & Buttons ******/
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+	color: inherit;
+}
+
+button {
+	cursor: pointer;
+	background: none;
+	border: none;
+}
+
+textarea {
+	resize: vertical;
+}
+/* ====================================== Styling ====================================== */
+
+main.counter-card {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+
+	background-color: var(--secondary-clr);
+	border: 1px solid rgba(197, 197, 197, 0.12);
+	border-radius: 5px;
+	min-width: 500px;
+	padding: 50px;
+
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Subtle elevation */
+}
+
+main.counter-card .counter-title {
+	color: var(--accent-clr-2);
+}
+main.counter-card .counter-display {
+	display: flex;
+	justify-content: space-between;
+
+	padding: 0 10px;
+
+	color: var(--accent-clr-1);
+	font-size: x-large;
+}
+main.counter-card .counter-display .count-value {
+	flex-grow: 1;
+	text-align: center;
+}
+main.counter-card .button-group {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.btn {
+	width: 100%;
+	padding: 10px 20px;
+	font-size: 16px;
+	font-weight: 500;
+	color: #ffffff;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+
+	transition:
+		background-color 0.3s ease,
+		transform 0.1s ease,
+		box-shadow 0.3s ease;
+}
+
+.btn:active {
+	transform: scale(0.98);
+}
+
+.btn-success {
+	background-color: var(--success-clr);
+}
+
+.btn-success:hover {
+	background-color: color-mix(in srgb, var(--success-clr), #000 15%);
+	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.25);
+}
+
+.btn-dark {
+	background-color: var(--dark-clr);
+}
+
+.btn-dark:hover {
+	background-color: color-mix(in srgb, var(--dark-clr), #fff 15%); /*15% white*/
+	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.25);
+}
